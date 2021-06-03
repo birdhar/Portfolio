@@ -1,0 +1,750 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+
+
+:root {
+  --primaryColor: #fff;
+  --navColor1: #21292c;
+  --navColor2: #aa3e39;
+  --navColor3: #aa6e39;
+  --navColor4: #236267;
+  --navColor5: #2c8437;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #000;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* --- Navigation Menu ------------------------------ */
+
+/*------Overlay--------*/
+.overlay{
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  width: 100vw; 
+  height: 100vh; 
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: translateX(-100vw);
+}
+
+.overlay-slide-right{
+  transition: all 0.4s ease-in-out;
+  transform: translateX(0);
+}
+
+.overlay-slide-left{
+  transition: all 1s ease-in-out;
+  transform: translateX(-100vw);
+}
+
+/* --- Navigation Menu items------------------------------ */
+nav, 
+nav ul{
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+
+nav ul{
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  list-style: none;
+}
+
+nav ul li {
+  height: 20%;
+  overflow: hidden;
+  
+}
+
+nav li a{
+  position: relative;
+  top: 45%;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  display:block;
+  letter-spacing: 5px;
+  text-align: center;
+  
+}
+
+nav li a:hover{
+  transform: scale(1.2);
+}
+
+nav li:nth-of-type(1) {
+  background-color: var(--navColor1);
+}
+nav li:nth-of-type(2) {
+  background-color: var(--navColor2);
+}
+nav li:nth-of-type(3) { 
+  background-color: var(--navColor3);
+}
+nav li:nth-of-type(4) {
+  background-color: var(--navColor4);
+}
+nav li:nth-of-type(5) {
+  background-color: var(--navColor5);
+}
+
+
+/*----Slide in Menu Bars-----*/
+
+.slide-in-1 {
+  animation: slide-in 0.4s linear 0.2s both;
+}
+.slide-in-2 {
+  animation: slide-in 0.4s linear 0.4s both;
+}
+.slide-in-3 {
+  animation: slide-in 0.4s linear 0.6s both;
+}
+.slide-in-4 {
+  animation: slide-in 0.4s linear 0.8s both;
+}
+.slide-in-5 {
+  animation: slide-in 0.4s linear 1s both;
+}
+
+@keyframes slide-in {
+  from{
+    transform: translateX(-100%);
+  }
+  to{
+    transform: translateX(0);
+  }
+}
+
+
+/*----Slide out Menu Bars-----*/
+
+.slide-out-1 {
+  animation: slide-out 0.3s linear 0.5s both;
+}
+.slide-out-2 {
+  animation: slide-out 0.3s linear 0.4s both;
+}
+.slide-out-3 {
+  animation: slide-out 0.3s linear 0.3s both;
+}
+.slide-out-4 {
+  animation: slide-out 0.3s linear 0.2s both;
+}
+.slide-out-5 {
+  animation: slide-out 0.3s linear 0.1s both;
+}
+
+@keyframes slide-out {
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-100%);
+  }
+}
+
+/* --- Menu Bars ------------------------------------ */
+
+.menu-bars {
+  position: fixed;
+  top: 1rem;
+  left: 2rem;
+  z-index: 10;
+  display: inline;
+  cursor: pointer;
+}
+
+.menu-bars-right{
+  top: 1rem;
+  right: 2rem;
+  z-index: 10;
+}
+
+.menu-bars-left{
+  top: 1rem;
+  left: 2rem;
+  z-index: 10;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 2px;
+  background-color: #fff;
+  margin: 8px 0;
+  transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+  transform: rotate(-45deg) translate(-7px, 8px);
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+  opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+  transform: rotate(45deg) translate(-6px, -8px);
+}
+
+/* --- Sections ------------------------------------ */
+
+section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--primaryColor);
+}
+
+section#home {
+  background-image: url("images/bg2.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
+.about-me{
+  margin-left: -800px;
+  margin-top: 80px;
+}
+
+.about-me h1{
+  font-size: 50px;
+  opacity: var(--primaryColor);
+  margin-bottom: 10px;
+}
+
+.button1{
+  width: 300px;
+  height: 40px;
+  border-radius: 20px;
+  background: rgba(247, 250, 252, 0.05);
+  color: aquamarine;
+  border: 1px solid white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.button1:hover{
+  background: rgba(247, 250, 252, 0.1);
+  
+}
+
+section#about {
+  background-color: var(--navColor2);
+}
+
+.box{
+  height: 580px;
+  width: 1200px;
+  margin: 35px;
+  display: grid;
+  grid-column-gap:50px;
+  grid-template-columns: 50% 50%;
+}
+
+.item1{
+  padding: 15px;
+  font-size: 35px;
+  text-transform: capitalize;
+}
+
+.item1 h1{
+  font-family: 'Dancing Script', cursive;
+ 
+}
+
+.item1 h6{
+  font-family: 'Kaushan Script', cursive;
+  text-transform: initial;
+}
+
+.item2 img {
+  height: 100%;
+  width: 100%;
+
+}
+
+section#skills {
+  background-color: var(--navColor3);
+}
+
+.skills {
+  background-color: var(--navColor3);
+  height: 70vh;
+}
+
+.contact {
+  background-color: var(--navColor3);
+  height: 70vh;
+}
+
+.heading {
+  margin-top: -50vh;
+  margin-left: 0vw;
+  position: absolute;
+  font-size: 30px;
+}
+
+section#skills .box{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 300px;
+  height: 400px;
+  margin-left: -62vw;
+}
+
+.box .percent{
+  position: relative;
+}
+.box .percent svg{
+  position: relative;
+  margin-left: 5px;
+}
+
+.box .percent svg circle{
+  fill: none;
+  stroke-width: 10;
+  stroke: #000;
+  transform: translate(5px, 5px); 
+  stroke-dasharray: 440;
+  stroke-dashoffset: 440;
+  stroke-linecap: round;
+  
+}
+
+.myCircle{
+  r: 70;
+}
+
+.box .percent svg circle:nth-child(1){
+  stroke-dashoffset: 0;
+  stroke: #fff5fd;
+}
+
+.box .one svg circle:nth-child(2){
+  stroke-dashoffset: calc(440 - (440 * 70) / 100);
+  stroke: #00ead3;
+}
+
+.box .two svg circle:nth-child(2){
+  stroke-dashoffset: calc(440 - (440 * 70) / 100);
+  stroke: #81b214;
+}
+
+.box .three svg circle:nth-child(2){
+  stroke-dashoffset: calc(440 - (440 * 40) / 100);
+  stroke: #ffcc29;
+}
+
+.box .four svg circle:nth-child(2){
+  stroke-dashoffset: calc(440 - (440 * 55) / 100);
+  stroke: #df1212bb;
+}
+
+.box .percent .number{
+  position: absolute;
+  top: 0%;
+  left: -23%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box .percent .number h2{
+  font-size: 35px;
+}
+
+.box .percent .number h2 span{
+  font-size: 24px;
+}
+
+.box .one .text{
+  position: absolute;
+  top: 88%;
+  left: 14%;
+}
+
+.box .two .text{
+  position: absolute;
+  top: 93%;
+  left: 18%;
+}
+
+.box .three .text{
+  position: absolute;
+  top: 93%;
+  left: 0%;
+}
+
+.box .four .text{
+  position: absolute;
+  top: 88%;
+  left: 0%;
+}
+
+.box .percent svg circle{
+  transform: scale(center, center);
+}
+
+section#projects {
+  background-color: var(--navColor4);
+}
+
+#projects h1{
+  position: absolute;
+  top: 0vh;
+  left: 42vw;
+  font-size: 30px;
+}
+
+
+.project-container{
+  padding: 40px;
+  overflow: hidden;
+  display: grid;
+  grid-row-gap: 40px;
+  grid-column-gap:40px;
+  margin: 0;
+  grid-template-columns: 33% 33% 33%;
+  margin-top: 0px;
+}
+
+.card-container{
+  border: 2px solid rgb(156, 146, 146);
+  border-radius: 10px;
+  margin-right: 55px;
+  width: 230px;
+  height: 250px;
+  background: var(--background);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+}
+
+.card-container img {
+  position: relative;
+  height: 70%;
+  width: 100%;
+}
+
+.card-container h3{
+  position: relative;
+  left: 5%;
+  bottom: 8%;
+  text-transform: initial;
+}
+
+.card-container .last{
+  left: 7%;
+  text-transform: initial;
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+
+.card-container .third{
+  left: 17%;
+  text-transform: initial;
+}
+
+
+
+.card-container .other{
+  left: 10%;
+  text-transform: initial;
+}
+
+
+.card-container .buttons{
+  position: relative;
+  left: 19%;
+  bottom: 13%;
+}
+
+.buttons button{
+  height: 30px;
+  width: 70px;
+  border-radius: 5px;
+  color: #e8eff1;
+  background: rgba(0, 0, 0, 0.31);
+  border: 1px solid rgb(253, 250, 250);
+  cursor: pointer;
+}
+
+.buttons button a{
+  color: #e8eff1;
+  text-decoration: none;
+}
+
+.buttons button:hover{
+  background: rgba(0, 0, 0, 0.712);
+}
+
+.buttons button:active{
+  transform: translateY(4%);
+}
+
+.card-container .lst{
+  position: relative;
+  left: 32%;
+  
+}
+
+section#contact {
+  background-color: var(--navColor5);
+  display: flex;
+  flex-direction: column;
+}
+
+section#contact h1{
+  position: relative;
+  font-size: 40px;
+  top: -10vh;
+}
+
+section#contact p{
+  position: relative;
+  margin: 60px;
+  top: -10vh;
+  text-transform: initial;
+  font-size: 23px;
+}
+
+section#contact p a{
+  text-decoration: none;
+  color: rgb(161, 201, 19);
+}
+
+.fab {
+  font-size: 50px;
+  margin-right: 20px;
+  cursor: pointer;
+  color: #e8eff1;
+}
+
+
+/* Media Query: Large Smartphone (Vertical) */
+@media (max-width: 600px) {
+
+  
+
+  section{
+    width: 95vw;
+    min-width: unset;
+    min-height: 245px;
+    padding: 20px;
+  }
+
+  section#home {
+    background-image: url('images/bg6.jpg');
+    background-size: cover;
+  }
+
+  .menu-bars {
+    top: 0.5rem;
+    left: 0.9rem;
+  }
+
+  .about-me{
+    margin-left: -5px;
+    margin-top: -100px;
+  }
+
+  .box{
+    width: 95%;
+    height: 100vh;
+    margin: 5vh 5vw;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .item1 h1{
+    font-size: 25px;
+    font-family: 'Dancing Script', cursive;
+  }
+
+  .item1 h6{
+    font-size: 15px;
+    font-family: 'Kaushan Script', cursive;
+  }
+  
+  .item2 img {
+    height: 40vh;
+    width: 100%;
+    
+  }
+
+  .heading {
+    margin-top: -42vh;
+    font-size: 20px;
+  }
+
+  section#skills .box{
+    width: 80%;
+    height: 400px;
+    margin-left: -62vw;
+  }
+  
+  .project-container{
+    position: relative;
+    grid-row-gap: 10px;
+    grid-column-gap:10px;
+    right: 10px;
+    
+  }
+  
+  .card-container{
+    margin-right: 5px;
+    width: 155px;
+    height: 240px;
+    
+  }
+
+  #projects h1{
+    position: absolute;
+    left: 27%;
+  }
+
+  .card-container h3{
+    font-size: 11px;
+    text-transform: initial;
+    position: relative;
+    top: -4px;
+  }
+
+  .card-container .buttons{
+    position: relative;
+    left: 3%;
+    bottom: 2%;
+  }
+
+  .card-container .lst{
+    position: relative;
+    left: 25%;
+    top: -15px;
+  }
+
+  .card-container .last{
+    position: relative;
+    text-transform: initial;
+    font-size: 10px;
+  }
+
+  section#contact .social-icons{
+    position: absolute;
+    top: 58vh;
+  }
+
+  section#contact h1{
+    position: relative;
+    top: -3vh;
+  }
+
+  .skills .box {
+    width: 95vw;
+    min-width: unset;
+    padding: 20px;
+    margin: 10px;
+    
+  }
+
+  .box .percent svg circle{
+    
+    stroke-width: 5;
+  }
+
+  .myCircle{
+    r:50;
+
+  }
+
+  .box .percent svg circle:nth-child(2){
+    stroke-dasharray: 314;
+    stroke-dashoffset: 314;
+  }
+
+  .box .one svg circle:nth-child(2){
+    stroke-dashoffset: calc(314 + (314 * 70) / 100);
+    stroke: #00ead3;
+  }
+  
+  .box .two svg circle:nth-child(2){
+    stroke: #81b214;
+    stroke-dashoffset: calc(314 - (55 * 314) / 100);
+  }
+
+  .box .three svg circle:nth-child(2){
+    stroke-dashoffset: calc(314 + (314 * 60) / 100);
+    stroke: #ffcc29;
+  }
+  
+.box .four svg circle:nth-child(2){
+    stroke-dashoffset: calc(314 + (314 * 50) / 100);
+    stroke: #df1212bb;
+  }
+
+  .skills .box{
+    display: flex;
+  }
+  .skills .box > .percent {
+    margin: -110px;
+    left: 235px;
+  }
+  .text{
+    font-size: 17px;
+    
+  }
+
+  .box .one .text{
+    position: absolute;
+    top: 88%;
+    left: 18%;
+  }
+  
+  .box .two .text{
+    position: absolute;
+    top: 88%;
+    left: 20%;
+  }
+  
+  .box .three .text{
+    position: absolute;
+    top: 88%;
+    left: 10%;
+  }
+  
+  .box .four .text{
+    position: absolute;
+    top: 88%;
+    left: 10%;
+  }
+
+  .menu-bars {
+    position: fixed;
+    top: 1rem;
+    left: 2rem;
+    
+  }
+} 
